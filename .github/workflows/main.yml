@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Test"
+      - name: 'Test'
         run: pwd
 
-      - name: "print"
+      - name: 'print'
         run: echo yomna
