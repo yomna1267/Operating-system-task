@@ -11,5 +11,5 @@ jobs:
       - name: 'Test'
         run: pwd
 
-      - name: 'print'
-        run: echo yomna
+      - name: 'print folder content'
+        run: ls
