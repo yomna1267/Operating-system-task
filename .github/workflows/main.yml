@@ -8,13 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Test'
-        run: pwd
-
-      - name: 'before'
-        run: ls
-      
       - uses: actions/checkout@v3
-      
-      - name: 'after'
-        run: ls
+       
+      - name: 'login to Docker hub'
+        run: docker login --username ${{secrets.DOCKERPASSWORD}} --password ${{secrets.DOCKERUSERNAME}}
