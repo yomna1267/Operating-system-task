@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v3
        
       - name: 'login to Docker hub'
-        run: docker login --username ${{ secrets.DOCKERPASSWORD }} --password-stdin ${{ secrets.DOCKERUSERNAME }} registry.cn-hangzhou.aliyuncs.com
+        run: docker login --username ${{ secrets.DOCKERUSERNAME }} --password-stdin ${{ secrets.DOCKERPASSWORD }} 
