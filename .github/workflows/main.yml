@@ -19,7 +19,7 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
       - name: "build docker image"
-        run: docker build -t $DOCKER_USER/newImage .
-        
+        run: docker build -t $DOCKER_USER/newimage .
+
       - name: "push image to dockerhub"
-        run: docker push $DOCKER_USER/newImage
+        run: docker push $DOCKER_USER/newimage
