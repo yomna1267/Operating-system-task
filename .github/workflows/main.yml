@@ -9,11 +9,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
-      - name: 'login to Docker hub'
+
+      - name: "login to Docker hub"
         env:
           DOCKER_USER: ${{ secrets.DOCKERUSERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKERPASSWORD }}
-       
+
         run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+      - name: "build docker image"
+        run: docker build -t $DOCKER_USER/newImage .
+        
+      - name: "push image to dockerhub"
+        run: docker push $DOCKER_USER/newImage
