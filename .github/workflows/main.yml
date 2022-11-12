@@ -9,6 +9,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      
+      - name:
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERUSERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERPASSWORD }}
        
       - name: 'login to Docker hub'
-        run: docker login --username ${{ secrets.DOCKERUSERNAME }} --password-stdin ${{ secrets.DOCKERPASSWORD }} 
+        run: docker login --username $DOCKER_USER --password-stdin $DOCKER_PASSWORD 
